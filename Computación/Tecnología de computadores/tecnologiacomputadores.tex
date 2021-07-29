@@ -14,6 +14,9 @@
 \usepackage{blkarray, bigstrut}
 \usepackage{stackrel} 
 
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
 \title{{\scshape\Huge Tecnología de computadores \par}}
 \author{Francisco Javier Balón Aguilar}
 
@@ -22,6 +25,9 @@
 \maketitle
 \renewcommand{\contentsname}{Índice}
 \tableofcontents
+\newpage
+%Lista de figuras 
+\listoffigures
 \newpage
 
 \section{Álgebra de Boole y puertas lógicas}
@@ -233,7 +239,7 @@
 		\begin{figure}[htp]
 			\centering
 			\includegraphics[width=0.7\textwidth]{resources/alu2bits.png}
-			\caption{Unidad aritmético-lógica de dos bits.}
+			\caption{Unidad aritmético-lógica de dos bits}
 			\label{alu2bits}
 		\end{figure}
 
@@ -283,7 +289,7 @@
 		\begin{figure}[htp]
 			\centering
 			\includegraphics[width=0.7\textwidth]{resources/multiplexor.png}
-			\caption{Representación de un multiplexor de dos entradas.}
+			\caption{Representación de un multiplexor de dos entradas}
 			\label{multiplexor}
 		\end{figure}
 
@@ -296,7 +302,7 @@
 		\begin{figure}[htp]
 			\centering
 			\includegraphics[width=0.7\textwidth]{resources/demultiplexor.png}
-			\caption{Representación de un demultiplexor de dos entradas.}
+			\caption{Representación de un demultiplexor de dos entradas}
 			\label{demultiplexor}
 		\end{figure}
 
@@ -311,7 +317,7 @@
 		\begin{figure}[htp]
 			\centering
 			\includegraphics[width=0.7\textwidth]{resources/codificador.jpg}
-			\caption{Representación de un codificador binario.}
+			\caption{Representación de un codificador binario}
 			\label{codificador}
 		\end{figure}
 
@@ -347,7 +353,7 @@
 			\begin{figure}[htp]
 				\centering
 				\includegraphics[width=0.4\textwidth]{resources/7segmentos.jpg}
-				\caption{Display de 7 segmentos.}
+				\caption{Display de 7 segmentos}
 				\label{7segmentos}
 			\end{figure}
 
@@ -366,7 +372,7 @@
 	\begin{figure}[htp]
 		\centering
 		\includegraphics[width=0.7\textwidth]{resources/circuitosecuencial.jpg}
-		\caption{Estructura general de un sistema secuencial.}
+		\caption{Estructura general de un sistema secuencial}
 		\label{circuitosecuencial}
 	\end{figure}
 
@@ -398,7 +404,7 @@
 		\begin{figure}[htp]
 			\centering
 			\includegraphics[width=0.8\textwidth]{resources/clocksignal.png}
-			\caption{Señal de reloj.}
+			\caption{Señal de reloj}
 			\label{clocksignal}
 		\end{figure}
 	
@@ -425,7 +431,7 @@
 			\begin{figure}[htp]
 				\centering
 				\includegraphics[width=0.8\textwidth]{resources/biestablesrsnor.jpg}
-				\caption{Biestable RS-NOR. Implementación posible usando puertas NOR.}
+				\caption{Biestable RS-NOR. Implementación posible usando puertas NOR}
 				\label{biestablesrsnor}
 			\end{figure}
 	
@@ -436,7 +442,7 @@
 			\begin{figure}[htp]
 				\centering
 				\includegraphics[width=0.3\textwidth]{resources/biestabled.jpg}
-				\caption{Representación simbólica del biestable D.}
+				\caption{Representación simbólica del biestable D}
 				\label{biestabled}
 			\end{figure}
 
@@ -445,7 +451,7 @@
 			\begin{figure}[htp]
 				\centering
 				\includegraphics[width=0.7\textwidth]{resources/biestabled2.png}
-				\caption{Diagrama de un biestable D.}
+				\caption{Diagrama de un biestable D}
 				\label{biestabled2}
 			\end{figure}
 
@@ -458,7 +464,7 @@
 			\begin{figure}[htp]
 				\centering
 				\includegraphics[width=0.3\textwidth]{resources/biestablejk.jpg}
-				\caption{Representación simbólica del biestable JK.}
+				\caption{Representación simbólica del biestable JK}
 				\label{biestablejk}
 			\end{figure}
 
@@ -476,7 +482,7 @@
 			\begin{figure}[htp]
 				\centering
 				\includegraphics[width=0.2\textwidth]{resources/entradasasincronas.png}
-				\caption{Biestable JK con entradas asíncronas.}
+				\caption{Biestable JK con entradas asíncronas}
 				\label{entradasasincronas}
 			\end{figure}
 
@@ -493,7 +499,7 @@
 			\begin{figure}[htp]
 				\centering
 				\includegraphics[width=0.2\textwidth]{resources/partemp.png}
-				\caption{Parámetros temporales.}
+				\caption{Parámetros temporales}
 				\label{partemp}
 			\end{figure}
 
