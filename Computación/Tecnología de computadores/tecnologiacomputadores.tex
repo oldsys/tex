@@ -654,7 +654,47 @@
 
 			No todos los biestables actúan al mismo tiempo por culpa de los retardos, algo que además se hace más notorio a medida que crece el número de biestables. Esto hace que estos contadores sean más lentos.
 
+	\subsection{Tipos de circuitos secuenciales}
 
+		Teniendo en cuenta si los dispositivos de memoria están conectados al reloj del sistema directamente o no, podemos clasificar los sistemas secuenciales en:
+
+		\subsubsection{Circuitos asíncronos}
+
+			Las salidas, ante un cambio en sus entradas, alcanzan sus niveles definitivos transcurrido un tiempo en función de los tiempos de propagación del circuito combinacional y de los elementos de memoria. 
+			
+			Por lo tanto, durante un periodo de tiempo las salidas no serán definitivas y podrán oscilar si unas líneas de salida cambian antes que otras, por lo que para que la salida de un circuito secuencial asíncrono pueda servir como entrada a otro circuito hay que esperar un tiempo hasta que los valores de salida sean definitivos.
+
+		\subsubsection{Circuitos síncronos}
+
+			Eliminan el problema anterior utilizando una señal de sincronismo o señal de reloj. Los cambios en las entradas y en los estados internos sólo tienen efecto sobre el resto del sistema en instantes discretos de tiempo que coinciden con los flancos de subida o bajada de la señal de reloj.
+			
+			Los circuitos síncronos suelen ser más lentos que los asíncronos debido a la espera que debe producirse entre que las salidas alcanzan sus niveles definitivos y el flanco de subida o bajada que hará que puedan ser utilizadas como entradas para otros circuitos. Sin embargo, son más sencillos de implementar, por lo que suelen utilizarse en sistemas complejos como puede ser un computador.
+
+		\subsubsection{Autómatas finitos}
+
+			Se puede definir como autómata cualquier sistema que pueda transformar una serie de entradas en salidas, es decir, procesar información. Esto abarca desde autómatas sencillos (contadores digitales, sumadores, registros, unidades de control) hasta autómatas complejos (computador).
+		
+			El modelo matemático que describe un sistema secuencial síncrono es la máquina de estados finitos o autómata de estados finitos. El estado en el que se encuentre el autómata debe almacenarse en una memoria interna, y, para que puedan implementarse, esa memoria debe ser finita, por lo que también serán finitos los estados que podrá almacenar.
+
+			Si a una máquina de estados finitos (MEF) se le introducen una serie de datos de entrada a lo largo del tiempo $x(t)$, la salida $z(t)$ de la MEF en un instante determinado será función de la entrada en ese instante y del estado en el que se encuentre el autómata en ese instante de tiempo $q(t)$.
+
+			Si la memoria tiene $p$ elementos ($M_0.... M_{p-1}$), siendo p un número finito ya que el autómata debe ser finito, el número máximo de estados que se pueden almacenar será $2^p$. Uno de estos estados será el estado inicial del autómata desde el cual evolucionará en función de las entradas y los estados por los que pase. Véase figura \ref{sistema_secuencial_sincrono}.
+
+			\begin{figure}[htp]
+				\centering
+				\includegraphics[width=0.6\textwidth]{resources/sistema_secuencial_sincrono.png}
+				\caption{Estructura general de un sistema secuencial síncrono}
+				\label{sistema_secuencial_sincrono}
+			\end{figure}
+
+			Las dos implementaciones básicas de los autómatas finitos son:
+
+			\begin{itemize}
+				\item \textit{Máquina de Mealy}. La salida $z(t)$ depende tanto del estado actual $q(t)$ como
+				de las entradas actuales $x(t)$.
+				\item \textit{Máquina de Moore}. La salida $z(t)$ es función únicamente del estado actual
+				$q(t)$.
+			\end{itemize}
 
 
 \end{document}
