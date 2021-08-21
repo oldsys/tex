@@ -702,7 +702,7 @@
 		
 		\subsubsection{Análisis de un \textit{autómata de Mealy}}
 
-			Es un sistema con una única entrada ($X$) y una única salida ($Z$), y dos biestables, uno tipo JK y otro tipo D que almacenarán los dos bits que representan el estado del circuito (hay cuatro posibles estados). El biestable JK almacenará el bit menos significativo ($Q_0$) y el biestable D el más significativo ($Q_1$). El circuito es un \textit{autómata de Mealy} ya que la salida depende de la entrada y del estado en el que se encuentre el circuito, ya que la puerta NOR que hay justo antes de la salida tiene como entradas la salida de uno de los biestables y la entrada ($X$).
+			Es un sistema con una única entrada ($X$) y una única salida ($Z$), y dos biestables, uno tipo JK y otro tipo D que almacenarán los dos bits que representan el estado del circuito (hay cuatro posibles estados). El biestable JK almacenará el bit menos significativo ($Q_0$) y el biestable D el más significativo ($Q_1$). El circuito es un \textit{autómata de Mealy} ya que la salida depende de la entrada y del estado en el que se encuentre el circuito, ya que la puerta NOR que hay justo antes de la salida tiene como entradas la salida de uno de los biestables y la entrada ($X$). Véase figura \ref{automata_mealy}.
 
 			\begin{figure}[htp]
 				\centering
@@ -761,5 +761,60 @@
 			\end{enumerate}
 
 		\subsubsection{Análisis de un \textit{autómata de Moore}}
+
+			Eliminamos la relación existente entre la entrada y la salida, de forma que la salida ahora es únicamente función del estado en el que se encuentre el circuito, creando un \textit{autómata de Moore}. Véase figura \ref{automata_moore}.
+
+			\begin{figure}[htp]
+				\centering
+				\includegraphics[width=0.8\textwidth]{resources/automata_moore.png}
+				\caption{Circuito a analizar como \textit{autómata de Moore}}
+				\label{automata_moore}
+			\end{figure}
+
+			Los pasos a seguir para el análisis son:
+
+			\begin{enumerate}
+				\item Obtención de ecuaciones lógicas de las señales que se están aplicando a las entradas de los biestables (tablas de excitación de los biestables).
+				\[J=X\]
+				\[K=Q_0\overline{Q_1}\]
+				\[D=\overline{Q_0}\]
+				\item Obtención de ecuaciones lógicas del próximo estado, es decir, las próximas salidas de los biestables $Q(t+1)$ ó $\overline{Q(t+1)}$; sustituyendo las expresiones lógicas de las entradas en las ecuaciones de la salida del tipo de biestable que se esté utilizando.
+				\[Q_0(t+1)=X\overline{Q_0(t)}+\overline{Q_0(t)\overline{Q_1(t)}}Q_0(t)\]
+				\[Q_1(t+1)=\overline{Q_0(t)}\]
+				\item Obtención de función lógica de la salida.
+				\[Z(t)=Q_1(t)\]
+				\item Representación de la tabla de estados.
+				
+				\begin{figure}[htp]
+					\centering
+					\includegraphics[width=0.6\textwidth]{resources/automata_moore01.png}
+					\caption{Tabla de estados de \textit{autómata de Moore}}
+					\label{automata_moore01}
+				\end{figure}
+
+				\item Asignación de nombres ($q_0$, $q_1$, $q_2$...) a cada combinación binaria de las salidas de los biestables, a todos los estados posibles.
+				\[q_0=00\]
+				\[q_1=01\]
+				\[q_2=10\]
+				\[q_3=11\]
+				Véase la tabla de estados actualizada con la asignación en figura \ref{automata_moore02}. 
+
+				\begin{figure}[htp]
+					\centering
+					\includegraphics[width=0.6\textwidth]{resources/automata_moore02.png}
+					\caption{Tabla de estados de \textit{autómata de Moore} después de asignación de nombres}
+					\label{automata_moore02}
+				\end{figure}
+
+				\item Representación del diagrama de estados o grafo de comportamiento del sistema. Véase figura \ref{automata_moore03}.
+				
+				\begin{figure}[htp]
+					\centering
+					\includegraphics[width=0.6\textwidth]{resources/automata_moore03.png}
+					\caption{Grafo \textit{autómata de Mealy}}
+					\label{automata_moore03}
+				\end{figure}
+			\end{enumerate}
+
 
 \end{document}
